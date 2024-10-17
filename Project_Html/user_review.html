@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name = Julian_Agius>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>User_Review_Amsterdam</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body  class="body">
+<div style="width: 100%; display: flex; background-color: #ffffff; height: 50px; position: sticky; top: 0; ">
+    <div class = "masthead-item masthead"><a class="masthead_text" href="homepage.html"> Home Page </a></div>
+    <div class = "masthead-item masthead"><a class="masthead_text" href="user_review.html"> User Review </a></div>
+    <div class = "masthead-item masthead"><a class="masthead_text" href="attractions.html"> Attractions </a></div>
+    <div class = "masthead-item masthead"><a class="masthead_text" href="famouspeople.html"> Famous Inhabitans </a></div>
+</div>
+<br>
+
+<div style="display: flex; height:100vh">
+<div style="  transform:scale(4); display: flex; margin:auto;background-color: #a9a9a9;; width:fit-content; padding: 15px; border-radius: 15px; border: #8b8680 5px solid;">
+<form name="inputform"  method="get" style="width: 100%;" >
+<table>
+<tr><th>Name & Surname:</th></tr>
+<tr><td><input style="width: 95.5% ;" type="text" placeholder="Name Surname"></td></tr>
+<tr><td><textarea style="width: 96.5%; resize: none;" placeholder="Review" name="reviewinput" ></textarea></td></tr>
+<tr><td><input style="width: 97%;" type="date"> </td></tr>
+<tr><td><input  style="width:100%"; type="submit" value="submit"></type> </td></tr>
+<tr><td id="dateTime"> </td></tr>
+</table>
+</form>
+</div> 
+</div>
+
+<script>
+function updateDateTime() {
+        const now = new Date();
+        const formattedDateTime = now.toLocaleString();
+        document.getElementById('dateTime').innerText = formattedDateTime;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+</script>
+
+</body>
+</html>
