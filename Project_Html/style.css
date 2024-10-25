@@ -1,46 +1,117 @@
-.body {
-  color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
+@font-face {
+  font-family: Ballet;
+  src: url(Updock-Regular.ttf);
 }
 
-.bodyattraction {
-  background-color: rgb(196, 92, 92);
+@font-face {
+  font-family: Pacifico;
+  src: url(Bungee-Regular.ttf);
+}
+
+@font-face {
+  font-family: Sixtyfour;
+  src: url(Sixtyfour.ttf);
+}
+
+@media (max-width: 1000px) {
+  .Flag {
+    display: none;
+  }
+
+  .bubble {
+    flex-direction: column;
+    width: 100% !important;
+  }
+
+  .bubble_1 {
+    flex-direction: column-reverse;
+  }
+
+  .circle_L {
+    width: 320px !important;
+    height: 320px !important;
+    border-radius: 50%;
+    margin-left: 0px !important;
+    border: #312f2c solid 25px;
+    z-index: 0;
+  }
+
+  .circle_R {
+    width: 320px !important;
+    height: 320px !important;
+    border-radius: 50%;
+    margin-right: 0px !important;
+    border: #312f2c solid 25px;
+    z-index: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .title {
   text-align: center;
-  font-size: 100px;
+  font-size: clamp(3.1em, 10vw, 18.75em);
   margin: auto;
   padding-bottom: 10px;
+  z-index: 1;
+  font-family: Ballet;
+  text-shadow: 1px 5px 2px rgb(0, 0, 0);
+}
+
+.title_Home_1 {
+  color: rgb(0, 153, 255);
+}
+
+.title_Home_2 {
+  color: white;
 }
 
 .text {
-  font-size: 30px;
+  font-size: clamp(1.875em, 2.08vw, 4.688em);
+  text-align: justify;
+  color: white;
+  text-shadow: 1px 5px 2px rgb(0, 0, 0);
+}
+
+.body {
+  background-color: #183133;
 }
 
 .masthead_div {
-  width: 100%;
   display: flex;
-  background-color: white;
-  height: 50px;
+  flex-direction: row;
+  background-color: rgb(0, 0, 0);
+  height: 10vh;
   position: sticky;
   top: 0;
+  z-index: 1;
+}
+
+.Flag {
+  width: 100%;
+  height: 100%;
 }
 
 .masthead {
+  margin: clamp(0em, 1.042vw, 1.041em);
   background-color: #8b8680;
-  border-radius: 5px;
-  margin: auto;
-  padding: 5px;
+  border-radius: 10px;
+  padding: 0.521vw;
+  font-family: Pacifico;
 }
 
 .masthead_text {
   text-decoration: none;
   color: rgb(255, 255, 255);
+  font-size: clamp(0.625em, 0.833vw, 3.125em);
 }
 
 .masthead-item a:hover {
   color: #a9a9a9;
+  text-decoration: underline;
 }
 
 .table {
@@ -49,6 +120,7 @@
   width: 80%;
   flex-direction: row;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .table_p {
@@ -93,4 +165,51 @@
 .header {
   font-size: 2em;
   text-align: center;
+}
+
+.am_image {
+  position: relative;
+  background-image: url("Amsterdam.jpg");
+  background-size: cover;
+  z-index: 0;
+  margin: auto;
+  height: 1080px;
+  background-attachment: fixed;
+}
+
+.am_image::before {
+  content: "";
+  position: absolute;
+  background: #8b8680;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.circle_L {
+  width: clamp(22em, 28.646vw, 68.75em) !important;
+  height: clamp(22em, 28.646vw, 68.75em) !important;
+  border-radius: 50%;
+  margin-left: 10px;
+  border: #312f2c solid 25px;
+  z-index: 0;
+}
+
+.circle_R {
+  width: clamp(22em, 28.646vw, 68.75em) !important;
+  height: clamp(22em, 28.646vw, 68.75em) !important;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: #312f2c solid 25px;
+  z-index: 0;
+}
+
+.bubble {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  padding-bottom: 100px;
+  position: relative;
+  padding: 20px;
 }
