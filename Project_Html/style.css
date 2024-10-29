@@ -1,3 +1,35 @@
+:root {
+  --accent-color: #ef767a;
+  --main-color: #211d21;
+  --accent-color2: #ff5036;
+  --white: #ffffff;
+}
+
+@keyframes Van_halen {
+  1% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(30deg);
+  }
+  66% {
+    transform: rotate(-30deg);
+  }
+  99% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes crowd {
+  50% {
+    transform: translateY(-20px);
+  }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 @font-face {
   font-family: Ballet;
   src: url(Updock-Regular.ttf);
@@ -21,6 +53,7 @@
   .bubble {
     flex-direction: column;
     width: 100% !important;
+    padding: 0px !important;
   }
 
   .bubble_1 {
@@ -28,21 +61,45 @@
   }
 
   .circle_L {
-    width: 320px !important;
-    height: 320px !important;
-    border-radius: 50%;
+    width: 320px;
+    height: 320px;
     margin-left: 0px !important;
-    border: #312f2c solid 25px;
-    z-index: 0;
+    padding: 0px !important;
   }
 
   .circle_R {
-    width: 320px !important;
-    height: 320px !important;
-    border-radius: 50%;
+    width: 320px;
+    height: 320px;
     margin-right: 0px !important;
-    border: #312f2c solid 25px;
-    z-index: 0;
+    padding: 0px !important;
+  }
+}
+
+@media (max-width: 330px) {
+  .circle_L {
+    width: 300px !important;
+    height: 300px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    border: #183133 solid 0px !important;
+  }
+
+  .circle_R {
+    width: 300px !important;
+    height: 300px !important;
+    margin-right: 0px !important;
+    padding: 0px !important;
+    border: #183133 solid 0px !important;
+  }
+
+  .title_Home_1 {
+    font-size: 80px !important;
+  }
+}
+
+@media (width: 1920px) {
+  .Van_back::before {
+    top: 0px !important;
   }
 }
 
@@ -56,28 +113,23 @@
   font-size: clamp(3.1em, 10vw, 18.75em);
   margin: auto;
   padding-bottom: 10px;
-  z-index: 1;
+  z-index: 0;
   font-family: Ballet;
   text-shadow: 1px 5px 2px rgb(0, 0, 0);
 }
 
 .title_Home_1 {
-  color: rgb(0, 153, 255);
+  color: var(--accent-color2);
 }
 
 .title_Home_2 {
-  color: white;
-}
-
-.text {
-  font-size: clamp(1.875em, 2.08vw, 4.688em);
-  text-align: justify;
-  color: white;
-  text-shadow: 1px 5px 2px rgb(0, 0, 0);
+  color: var(--white);
+  position: relative;
+  z-index: -1;
 }
 
 .body {
-  background-color: #183133;
+  background-color: #211d21;
 }
 
 .masthead_div {
@@ -87,7 +139,7 @@
   height: 10vh;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
 }
 
 .Flag {
@@ -133,28 +185,21 @@
 }
 
 .image {
-  width: 50%;
-  height: fit-content;
+  width: 60%;
+  height: 60%;
+  z-index: 0;
 }
 
 .userform_middle {
-  display: flex;
+  height: 90vh;
+  width: 80%;
   margin: auto;
-  background-color: #a9a9a9;
-  width: fit-content;
-  padding: 15px;
-  border-radius: 15px;
-  border: #8b8680 solid 5px;
-}
-
-.userform_exterior {
-  display: flex;
-  height: 100vh;
 }
 
 .userform_interior {
   display: flex;
   flex-direction: column;
+  height: 90vh;
 }
 
 .flex {
@@ -169,38 +214,49 @@
 
 .am_image {
   position: relative;
-  background-image: url("Amsterdam.jpg");
   background-size: cover;
   z-index: 0;
   margin: auto;
   height: 1080px;
   background-attachment: fixed;
+  background-position: center;
+}
+
+.Home_Page {
+  background-image: url(Amsterdam.jpg);
+  font-size: 16px;
+}
+
+.Famous_People {
+  background-image: url(VanHalenStripes.png);
 }
 
 .am_image::before {
   content: "";
   position: absolute;
   background: #8b8680;
+  /* #003b13 */
   width: 100%;
   height: 100%;
   opacity: 0.5;
+  z-index: -2;
 }
 
 .circle_L {
-  width: clamp(22em, 28.646vw, 68.75em) !important;
-  height: clamp(22em, 28.646vw, 68.75em) !important;
+  width: clamp(22em, 28.646vw, 68.75em);
+  height: clamp(22em, 28.646vw, 68.75em);
   border-radius: 50%;
-  margin-left: 10px;
-  border: #312f2c solid 25px;
+  margin-left: clamp(0em, 0.521vw, 1.25em);
+  border: #312f2c solid clamp(0.313em, 1.302vw, 3.313em);
   z-index: 0;
 }
 
 .circle_R {
-  width: clamp(22em, 28.646vw, 68.75em) !important;
-  height: clamp(22em, 28.646vw, 68.75em) !important;
+  width: clamp(22em, 28.646vw, 68.75em);
+  height: clamp(22em, 28.646vw, 68.75em);
   border-radius: 50%;
-  margin-right: 10px;
-  border: #312f2c solid 25px;
+  margin-right: clamp(0em, 0.521vw, 1.25em);
+  border: #312f2c solid clamp(0.313em, 1.302vw, 3.313em);
   z-index: 0;
 }
 
@@ -212,4 +268,218 @@
   padding-bottom: 100px;
   position: relative;
   padding: 20px;
+}
+
+.bubbleF {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  position: relative;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.Van_back {
+  position: relative;
+  background-size: cover;
+  z-index: 0;
+  margin: auto;
+  height: 1080px;
+  width: 100%;
+  background-attachment: fixed;
+  background-image: url("Upscaled.png");
+}
+
+.Van_back::before {
+  content: "";
+  position: absolute;
+  width: clamp(20em, 46.875vw, 75em);
+  height: clamp(20em, 46.875vw, 75em);
+  top: clamp(6.25em, 0vw, 18.75em);
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("Van_Halen_T.png");
+
+  animation-name: Van_halen;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.Van_back::after {
+  content: "";
+  position: absolute;
+  background-image: url("TransP_Crowd.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80%;
+  bottom: 0;
+  animation-name: crowd;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  overflow: visible;
+}
+
+.black {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.black::before {
+  content: " ";
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+}
+
+.Anne_back {
+  position: relative;
+  background-size: cover;
+  z-index: 0;
+  margin: auto;
+  width: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-image: url("Anne.jpg");
+  background-repeat: no-repeat;
+}
+
+.text80 {
+  position: relative;
+  width: 80%;
+  font-size: clamp(1.875em, 2.08vw, 4.688em);
+  text-align: justify;
+  color: var(--white);
+  text-shadow: 1px 5px 2px rgb(0, 0, 0);
+  margin: auto;
+  z-index: 1;
+}
+
+.text {
+  font-size: clamp(1.875em, 2.08vw, 4.688em);
+  text-align: justify;
+  color: var(--white);
+  text-shadow: 1px 5px 2px rgb(0, 0, 0);
+  margin: auto;
+}
+
+.Famous_Attractions {
+  background-image: url("https://lp-cms-production.imgix.net/2021-07/500pxRF_91627775.jpg?w=1920&h=640&fit=crop&crop=faces%2Cedges&auto=format&q=75 1x, https://lp-cms-production.imgix.net/2021-07/500pxRF_91627775.jpg?w=1920&h=640&fit=crop&crop=faces%2Cedges&auto=format&q=75 2x");
+  height: 100%;
+}
+
+.Heineken {
+  background-image: url("heineken-experience-hero-01.jpg");
+  position: relative;
+  background-size: cover;
+  z-index: 0;
+  margin: auto;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100%;
+}
+
+.Heineken::before {
+  content: "";
+  position: absolute;
+  background: #003b13;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -2;
+}
+
+.Van_Goh {
+  background-image: url("van_goh.jpg");
+  height: 100%;
+}
+
+.user_form_text {
+  border-radius: clamp(1.875em, 3.125vw, 8em);
+  width: 45%;
+  height: 3em;
+  outline: none;
+  padding: 1px;
+  font-size: clamp(0.938em, 2.604vw, 6.25em);
+  padding-left: 15px;
+  font-family: Pacifico;
+  box-sizing: border-box;
+}
+
+.user_form_text_right {
+  margin-right: auto;
+}
+
+.user_form_text_left {
+  margin-left: auto;
+}
+
+.user_title {
+  color: white;
+}
+
+.user_textarea {
+  outline: none;
+  border-radius: clamp(1.875em, 3.125vw, 8em);
+  width: 100%;
+  outline: none;
+  padding: 20px;
+  font-size: clamp(0.938em, 2.604vw, 6.25em);
+  resize: none;
+  font-family: Pacifico;
+  min-height: 30vh;
+  height: 10vh;
+  box-sizing: border-box;
+}
+
+.user_date {
+  font-family: Pacifico;
+  text-align: center;
+  outline: none;
+  border-radius: clamp(1.875em, 3.125vw, 8em);
+  width: 100%;
+  outline: none;
+  padding: 1px;
+  font-size: clamp(1.75em, 5.208vw, 12.5em);
+  padding-right: 5px;
+  resize: none;
+  box-sizing: border-box;
+  color: white;
+  text-shadow: 1px 5px 2px black;
+}
+
+.user_input {
+  text-align: center;
+  outline: none;
+  border-radius: clamp(1.875em, 3.125vw, 8em);
+  width: 100%;
+  outline: none;
+  padding: 1px;
+  font-size: clamp(1.75em, 5.208vw, 12.5em);
+  padding-right: 5px;
+  resize: none;
+  box-sizing: border-box;
+  font-family: Pacifico;
+  color: white;
+  text-shadow: 1px 5px 2px black;
+}
+
+.form_header {
+  font-size: 6vw;
+  color: white;
+  font-family: "Pacifico";
+}
+
+.user_red {
+  color: var(--accent-color2);
 }
