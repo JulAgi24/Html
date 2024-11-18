@@ -1,50 +1,126 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name = Julian_Agius>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="Julian_Agius" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <title>Home_Page_Amsterdam</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
 
-</head>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
 
-<body  class="body">
+    <link rel="stylesheet" href="test.css" />
+  </head>
 
-<div style="width: 100%; display: flex; background-color: #ffffff; height: 50px; position: sticky; top: 0;">
-    <div class = "masthead-item masthead"><a class="masthead_text" href="HomePage.html"> Home Page </a></div>
-    <div class = "masthead-item masthead"><a class="masthead_text" href="user_review.html"> User Review </a></div>
-    <div class = "masthead-item masthead"><a class="masthead_text" href="attractions.html"> Attractions </a></div>
-    <div class = "masthead-item masthead"><a class="masthead_text" href="famouspeople.html"> Famous Inhabitans </a></div>
-</div>
-<br>
+  <body class="body">
+    <div class="masthead_div">
+      <div><img src="Flag.png" class="Flag" /></div>
+      <div style="width: fit-content; margin: auto; display: flex">
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="HomePage.html"> Home Page </a>
+        </div>
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="user_review.html"> User Review </a>
+        </div>
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="attractions.html"> Attractions </a>
+        </div>
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="famouspeople.html">
+            Famous Inhabitants
+          </a>
+        </div>
+      </div>
+      <div><img src="Flag.png" class="Flag" /></div>
+    </div>
 
-<div  style="display: flex;">  
-    <div style=" margin:auto ;"><h1 style="font-size: 100px;"><b>Amsterdam</b></h1></div>
-</div>
+    <div class="masthead-phone">
+      <input type="checkbox" id="toggle" style="display: none" />
+      <label for="toggle" class="image">
+        <img src="Menus.png" class="image-drop-down" />
+      </label>
 
-<img  src="Amster_Home.jpg" width="100%">
+      <div class="text-container drop-phone-text">
+        <a class="drop-down-text" href="HomePage.html"> Home Page </a>
+        <a class="drop-down-text" href="user_review.html"> User Review </a>
+        <a class="drop-down-text" href="attractions.html"> Attractions </a>
+        <a class="drop-down-text" href="famouspeople.html">
+          Famous Inhabitants</a
+        >
+      </div>
+    </div>
 
-<h1 class="head"> <b>Introduction</b></h1>
+    <div
+      style="display: flex; flex-direction: column"
+      class="am_image Home_Page"
+    >
+      <div class="title">
+        <h1>
+          <b class="title_Home_1">Amsterdam</b>
+        </h1>
+      </div>
 
-<p class="text">
-Amsterdam, the vibrant capital of the Netherlands, is a city renowned for its artistic heritage, 
-intricate canal system, and narrow houses with gabled facades, which reflect its Golden Age 
-history. Founded in the 12th century as a small fishing village, Amsterdam has blossomed into a 
-cultural hub, home to world-class museums like the Rijksmuseum and the Van Gogh Museum, 
-as well as the Anne Frank House, which draws visitors from around the globe.
+      <div class="blurred">
+        <div id="temp" class="temps"></div>
+      </div>
+    </div>
 
-<br><br>
+    <h1 class="title title_Home_2"><b>Introduction</b></h1>
 
-The city is characterized by its picturesque canals, which are UNESCO World Heritage Sites, 
-and its rich tapestry of history and modernity. Bicycles are the preferred mode of transport, 
-adding to the city's charming atmosphere and eco-friendly vibe. Amsterdam is also known for 
-its lively neighborhoods, such as the artistic Jordaan and the trendy De Pijp, offering an array of 
-cafes, boutiques, and vibrant nightlife. With a reputation for tolerance and diversity, Amsterdam 
-is a melting pot of cultures, making it a must-visit destination for travelers seeking both history 
-and contemporary allure.
-</P>
-</body>
+    <div class="bubble">
+      <img src="Amster_Home.jpg" class="circle_R" />
+      <p class="text">
+        Amsterdam, the vibrant capital of the Netherlands, is a city renowned
+        for its artistic heritage, intricate canal system, and narrow houses
+        with gabled facades, which reflect its Golden Age history. Founded in
+        the 12th century as a small fishing village, Amsterdam has blossomed
+        into a cultural hub, home to world-class museums like the Rijksmuseum
+        and the Van Gogh Museum, as well as the Anne Frank House, which draws
+        visitors from around the globe.
+      </p>
+    </div>
 
+    <div class="bubble bubble_1">
+      <p class="text">
+        The city is characterized by its picturesque canals, which are UNESCO
+        World Heritage Sites, and its rich tapestry of history and modernity.
+        Bicycles are the preferred mode of transport, adding to the city's
+        charming atmosphere and eco-friendly vibe. Amsterdam is also known for
+        its lively neighborhoods, such as the artistic Jordaan and the trendy De
+        Pijp, offering an array of cafes, boutiques, and vibrant nightlife. With
+        a reputation for tolerance and diversity, Amsterdam is a melting pot of
+        cultures, making it a must-visit destination for travelers seeking both
+        history and contemporary allure.
+      </p>
+      <img src="Amster_Home_2.jpg" class="circle_L" />
+    </div>
+
+    <div
+      style="
+        z-index: 0;
+        margin-top: 40px;
+        height: 800px;
+        width: 80%;
+        margin: auto;
+        border-radius: 30px;
+        margin-bottom: 40px;
+      "
+      id="map"
+    ></div>
+    <script type="text/JavaScript" src="test.js"></script>
+  </body>
 </html>

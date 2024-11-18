@@ -1,94 +1,126 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name = Julian_Agius>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="Julian_Agius" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
     <title>Attractions_Page_Amsterdam</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-
-</head>
-
-
-<body  class="body">
-
-<div style="width: 100%; display: flex; background-color: #ffffff; height: 50px; position: sticky; top: 0;">
-    <div class = "masthead-item masthead"><a class="masthead_text" href="homepage.html"> Home Page </a></div>
-    <div class = "masthead-item masthead"><a class="masthead_text" href="user_review.html"> User Review </a></div>
-    <div class = "masthead-item masthead"><a class="masthead_text" href="attractions.html"> Attractions </a></div>
-    <div class = "masthead-item masthead"><a class="masthead_text" href="famouspeople.html"> Famous Inhabitans </a></div>
-</div>
-
-<br>
-
-<h1 style="text-align: center; font-size: 60px;"><u>Famous Attractions</u></h1>
-
-</div>
-
-<div style="display: flex; margin: auto; width: 80%; ">
-    
-    <table style ="width:50%; padding-right: 10px;">
-        <tr><th><h1><u>Heineken Experience</u></h1></th></tr>
-        <tr><td>
-
-            <P style="text-align:justify; background-color: #a9a9a9; padding: 10px; border-radius: 15px; border: #8b8680 solid 5px;">
-            The Heineken Experience is an interactive museum and brewery tour located in Amsterdam,
-            Netherlands, within the former Heineken Brewery, which dates back to 1867. It offers visitors a deep
-            dive into the history, brewing process, and global legacy of Heineken beer. The tour is self-guided,
-            allowing guests to explore various multimedia exhibits, including brewing rooms, interactive displays,
-            and historical artifacts related to the company’s founder, Gerard Adriaan Heineken.
-            <br><br>
-            Visitors can learn about the brewing process, from malting and fermentation to bottling, with
-            opportunities to touch, smell, and even taste the raw ingredients. The experience also includes a
-            beer tasting session where guests can enjoy freshly brewed Heineken beer.
-            <br><br>
-            One of the highlights of the tour is the interactive games and activities, such as the “Brew Your Ride”
-            virtual reality experience, which simulates the beer-making process. The tour concludes with access
-            to the rooftop bar, offering panoramic views of Amsterdam while enjoying a complimentary drink.
-            <br><br>
-            Overall, the Heineken Experience combines education and entertainment, making it a must-visit for
-            beer enthusiasts and anyone interested in Dutch brewing history.
-            </P>
-        </td></tr>
-    </table>
-<img src="heineken-experience-hero-01.jpg" style="width:50%; height: fit-content;">
-</div>
-
-<br>
-
-<div style="display: flex; margin: auto; width: 80%  ">
-        <table style="width: 50%; padding-right: 10px;">
-            <tr><th><h1><u>Van Goh Museum</u></h1></th></tr>
-            <tr><td>
-                <P style="text-align:justify; background-color: #a9a9a9; padding: 10px; border-radius: 15px; border: #8b8680 solid 5px;">
-                Vincent van Gogh (1853–1890) was a Dutch Post-Impressionist painter, widely
-                regarded as one of the most influential figures in the history of Western art.
-                Despite his fame today, van Gogh struggled with poverty and mental illness
-                throughout his life, selling only a few paintings during his career. His expressive
-                use of color, bold brushstrokes, and emotional depth distinguished his works,
-                though these innovations were not widely recognized during his lifetime.
-                <br><br>
-                Van Gogh's early works, such as The Potato Eaters (1885), focused on somber tones
-                and depictions of rural life. However, after moving to Paris in 1886, his style shifted
-                dramatically as he encountered the vibrant colors and light of the Impressionist
-                and Neo-Impressionist movements. His later works, like Sunflowers (1888) and The
-                Starry Night (1889), reflect this transformation, characterized by swirling skies, vivid
-                colors, and a heightened emotional intensity.
-                <br><br>
-                One of the highlights of the tour is the interactive games and activities, such as the “Brew Your Ride”
-                virtual reality experience, which simulates the beer-making process. The tour concludes with access
-                to the rooftop bar, offering panoramic views of Amsterdam while enjoying a complimentary drink.
-                <br><br>
-                Plagued by mental health issues, van Gogh spent time in psychiatric institutions,
-                including a stay in Saint-Rémy-de-Provence, where he painted The Starry Night. He
-                died in 1890 from a gunshot wound, widely believed to be self-inflicted. Despite
-                his tragic life, van Gogh left behind over 2,000 artworks, which profoundly influenced modern art.
-                </p>
-            </td></tr>
-        </table>
-
-    <img src="van_goh.jpg" style="width: 50%; height:fit-content">
+  <body class="body">
+    <div class="masthead_div">
+      <div><img src="Flag.png" class="Flag" /></div>
+      <div style="width: fit-content; margin: auto; display: flex">
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="HomePage.html"> Home Page </a>
+        </div>
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="user_review.html"> User Review </a>
+        </div>
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="attractions.html"> Attractions </a>
+        </div>
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="famouspeople.html">
+            Famous Inhabitants
+          </a>
+        </div>
+      </div>
+      <div><img src="Flag.png" class="Flag" /></div>
     </div>
-</body>
+
+    <div class="masthead-phone">
+      <input type="checkbox" id="toggle" style="display: none" />
+      <label for="toggle" class="image">
+        <img src="Menus.png" class="image-drop-down" />
+      </label>
+
+      <div class="text-container drop-phone-text">
+        <a class="drop-down-text" href="HomePage.html"> Home Page </a>
+        <a class="drop-down-text" href="user_review.html"> User Review </a>
+        <a class="drop-down-text" href="attractions.html"> Attractions </a>
+        <a class="drop-down-text" href="famouspeople.html">
+          Famous Inhabitants</a
+        >
+      </div>
+    </div>
+
+    <div style="display: flex" class="am_image Famous_Attractions">
+      <div class="title">
+        <h1>
+          <b class="title_Home_1">Famous Attractions</b>
+        </h1>
+      </div>
+    </div>
+
+    <div class="bubbleF column">
+      <div class="am_image Heineken">
+        <h1 class="title title_Home_2">Heineken Experience</h1>
+        <p class="text80">
+          The Heineken Experience is an interactive museum and brewery tour
+          located in Amsterdam, Netherlands, within the former Heineken Brewery,
+          which dates back to 1867. It offers visitors a deep dive into the
+          history, brewing process, and global legacy of Heineken beer. The tour
+          is self-guided, allowing guests to explore various multimedia
+          exhibits, including brewing rooms, interactive displays, and
+          historical artifacts related to the company’s founder, Gerard Adriaan
+          Heineken.
+          <br /><br />
+          Visitors can learn about the brewing process, from malting and
+          fermentation to bottling, with opportunities to touch, smell, and even
+          taste the raw ingredients. The experience also includes a beer tasting
+          session where guests can enjoy freshly brewed Heineken beer.
+          <br /><br />
+          One of the highlights of the tour is the interactive games and
+          activities, such as the “Brew Your Ride” virtual reality experience,
+          which simulates the beer-making process. The tour concludes with
+          access to the rooftop bar, offering panoramic views of Amsterdam while
+          enjoying a complimentary drink.
+          <br /><br />
+          Overall, the Heineken Experience combines education and entertainment,
+          making it a must-visit for beer enthusiasts and anyone interested in
+          Dutch brewing history.
+        </p>
+      </div>
+    </div>
+
+    <div class="bubbleF column">
+      <div class="am_image Van_Goh">
+        <h1 class="title title_Home_2">Van Goh Museum</h1>
+        <p class="text80">
+          Vincent van Gogh (1853–1890) was a Dutch Post-Impressionist painter,
+          widely regarded as one of the most influential figures in the history
+          of Western art. Despite his fame today, van Gogh struggled with
+          poverty and mental illness throughout his life, selling only a few
+          paintings during his career. His expressive use of color, bold
+          brushstrokes, and emotional depth distinguished his works, though
+          these innovations were not widely recognized during his lifetime.
+          <br /><br />
+          Van Gogh's early works, such as The Potato Eaters (1885), focused on
+          somber tones and depictions of rural life. However, after moving to
+          Paris in 1886, his style shifted dramatically as he encountered the
+          vibrant colors and light of the Impressionist and Neo-Impressionist
+          movements. His later works, like Sunflowers (1888) and The Starry
+          Night (1889), reflect this transformation, characterized by swirling
+          skies, vivid colors, and a heightened emotional intensity.
+          <br /><br />
+          One of the highlights of the tour is the interactive games and
+          activities, such as the “Brew Your Ride” virtual reality experience,
+          which simulates the beer-making process. The tour concludes with
+          access to the rooftop bar, offering panoramic views of Amsterdam while
+          enjoying a complimentary drink.
+          <br /><br />
+          Plagued by mental health issues, van Gogh spent time in psychiatric
+          institutions, including a stay in Saint-Rémy-de-Provence, where he
+          painted The Starry Night. He died in 1890 from a gunshot wound, widely
+          believed to be self-inflicted. Despite his tragic life, van Gogh left
+          behind over 2,000 artworks, which profoundly influenced modern art.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

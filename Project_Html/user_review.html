@@ -1,49 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name = Julian_Agius>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="Julian_Agius" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
     <title>User_Review_Amsterdam</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body class="body">
+    <div class="masthead_div">
+      <div><img src="Flag.png" class="Flag" /></div>
+      <div style="width: fit-content; margin: auto; display: flex">
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="HomePage.html"> Home Page </a>
+        </div>
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="user_review.html"> User Review </a>
+        </div>
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="attractions.html"> Attractions </a>
+        </div>
+        <div class="masthead-item masthead">
+          <a class="masthead_text" href="famouspeople.html">
+            Famous Inhabitants
+          </a>
+        </div>
+      </div>
+      <div><img src="Flag.png" class="Flag" /></div>
+    </div>
 
-</head>
+    <div class="masthead-phone">
+      <input type="checkbox" id="toggle" style="display: none" />
+      <label for="toggle" class="image">
+        <img src="Menus.png" class="image-drop-down" />
+      </label>
 
-<body  class="body">
-<div style="width: 100%; display: flex; background-color: #ffffff; height: 50px; position: sticky; top: 0; ">
-    <div class = "masthead-item masthead"><a class="masthead_text" href="homepage.html"> Home Page </a></div>
-    <div class = "masthead-item masthead"><a class="masthead_text" href="user_review.html"> User Review </a></div>
-    <div class = "masthead-item masthead"><a class="masthead_text" href="attractions.html"> Attractions </a></div>
-    <div class = "masthead-item masthead"><a class="masthead_text" href="famouspeople.html"> Famous Inhabitans </a></div>
-</div>
-<br>
+      <div class="text-container drop-phone-text">
+        <a class="drop-down-text" href="HomePage.html"> Home Page </a>
+        <a class="drop-down-text" href="user_review.html"> User Review </a>
+        <a class="drop-down-text" href="attractions.html"> Attractions </a>
+        <a class="drop-down-text" href="famouspeople.html">
+          Famous Inhabitants</a
+        >
+      </div>
+    </div>
 
-<div style="display: flex; height:100vh">
-<div style="  transform:scale(4); display: flex; margin:auto;background-color: #a9a9a9;; width:fit-content; padding: 15px; border-radius: 15px; border: #8b8680 5px solid;">
-<form name="inputform"  method="get" style="width: 100%;" >
-<table>
-<tr><th>Name & Surname:</th></tr>
-<tr><td><input style="width: 95.5% ;" type="text" placeholder="Name Surname"></td></tr>
-<tr><td><textarea style="width: 96.5%; resize: none;" placeholder="Review" name="reviewinput" ></textarea></td></tr>
-<tr><td><input style="width: 97%;" type="date"> </td></tr>
-<tr><td><input  style="width:100%"; type="submit" value="submit"></type> </td></tr>
-<tr><td id="dateTime"> </td></tr>
-</table>
-</form>
-</div> 
-</div>
+    <!-- <div class="userform_middle">
+      <form name="inputform" method="get" class="userform_interior">
+        <p class="title user_title"><b>Contact Us</b></p>
+        <h2 class="form_header">Full Name <span class="user_red"> *</span></h2>
+        <div style="display: flex">
+          <input class="user_form_text user_form_text_right" type="text" />
+          <input class="user_form_text user_form_text_left" type="text" />
+        </div>
+        <br />
+        <br />
+        <h2 class="form_header">Review <span class="user_red"> *</span></h2>
+        <textarea class="user_textarea" name="reviewinput"></textarea>
+        <br />
+        <br />
+        <h2 class="form_header">Date <span class="user_red"> *</span></h2>
+        <input class="user_date" type="date" />
+        <br />
+        <br />
+        <input class="user_input" type="submit" value="submit" />
+      </form>
+    </div> -->
 
-<script>
-function updateDateTime() {
-        const now = new Date();
-        const formattedDateTime = now.toLocaleString();
-        document.getElementById('dateTime').innerText = formattedDateTime;
-        }
-
-        setInterval(updateDateTime, 1000);
-        updateDateTime();
-</script>
-
-</body>
+    <div
+      style="
+        margin: auto;
+        width: 50%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <form name="inputform" method="get">
+        <p class="title-user">Contact Us</p>
+        <h2 class="form_header">Full Name <span class="user_red"> *</span></h2>
+        <div style="display: flex">
+          <input class="font user_form_text user_form_text_right" type="text" />
+          <input class="font user_form_text user_form_text_left" type="text" />
+        </div>
+        <br />
+        <br />
+        <h2 class="form_header">Review <span class="user_red"> *</span></h2>
+        <textarea class="font user_textarea" name="reviewinput"></textarea>
+        <br />
+        <br />
+        <h2 class="form_header">Date <span class="user_red"> *</span></h2>
+        <input class="font user_date" type="date" />
+        <br />
+        <br />
+        <input class="font user_input" type="submit" value="submit" />
+      </form>
+    </div>
+  </body>
 </html>

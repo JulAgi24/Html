@@ -1,40 +1,661 @@
-
-.body
-{
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
+:root {
+  --accent-color: #ef767a;
+  --main-color: #211d21;
+  --accent-color2: #ff5036;
+  --white: #ffffff;
 }
 
-.bodyattraction
-{
-    background-color: rgb(196, 92, 92);
+@keyframes Van_halen {
+  1% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(30deg);
+  }
+  66% {
+    transform: rotate(-30deg);
+  }
+  99% {
+    transform: rotate(0deg);
+  }
 }
 
-.head
-{
-    text-align: center;
-    font-size: 50px;
+@keyframes crowd {
+  50% {
+    transform: translateY(-20px);
+  }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.text
-{
-    font-size: 30px;
+@font-face {
+  font-family: Ballet;
+  src: url(Updock-Regular.ttf);
 }
 
-.masthead
-{
-    background-color: #8b8680;
-    border-radius: 5px;
-    margin: auto;
-    padding: 5px;
+@font-face {
+  font-family: Pacifico;
+  src: url(Bungee-Regular.ttf);
 }
 
-.masthead_text
-{
-   text-decoration: none;
-   color: rgb(255, 255, 255);
+@font-face {
+  font-family: Sixtyfour;
+  src: url(Sixtyfour.ttf);
+}
+
+@media (max-width: 1000px) {
+  .Flag {
+    display: none;
+  }
+
+  .bubble {
+    flex-direction: column;
+    width: 100% !important;
+    padding: 0px !important;
+  }
+
+  .bubble_1 {
+    flex-direction: column-reverse;
+  }
+
+  .circle_L {
+    width: 320px;
+    height: 320px;
+    margin-left: 0px !important;
+    padding: 0px !important;
+  }
+
+  .circle_R {
+    width: 320px;
+    height: 320px;
+    margin-right: 0px !important;
+    padding: 0px !important;
+  }
+}
+
+@media (max-width: 330px) {
+  .circle_L {
+    width: 300px !important;
+    height: 300px !important;
+    margin-left: 0px !important;
+    padding: 0px !important;
+    border: #183133 solid 0px !important;
+  }
+
+  .circle_R {
+    width: 300px !important;
+    height: 300px !important;
+    margin-right: 0px !important;
+    padding: 0px !important;
+    border: #183133 solid 0px !important;
+  }
+
+  .title_Home_1 {
+    font-size: 80px !important;
+  }
+
+  .text_weather {
+    font-size: 9vw !important;
+  }
+
+  .template {
+    flex-direction: column !important;
+  }
+
+  .temps {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead_div {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .masthead-phone {
+    display: none !important;
+  }
+}
+
+@media (width: 1920px) {
+  .Van_back::before {
+    top: 0px !important;
+  }
+}
+
+@media (max-width: 683px) {
+  .form_header {
+    font-size: 3vh !important;
+  }
+
+  .font {
+    font-size: 3vh !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .blurred {
+    width: 85% !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .image_weather {
+    width: 150px !important;
+    margin-right: 5px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .image_weather {
+    width: 200px !important;
+    margin-right: 5px !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(3.1em, 10vw, 18.75em);
+  margin: auto;
+  padding-bottom: 10px;
+  z-index: 0;
+  font-family: Ballet;
+  text-shadow: 1px 5px 2px rgb(0, 0, 0);
+}
+
+.title-user {
+  font-size: 100px;
+  color: white;
+  z-index: 0;
+  font-family: Ballet;
+  text-shadow: 1px 5px 2px rgb(0, 0, 0);
+  text-align: center;
+  margin: auto;
+  font-weight: bold;
+}
+
+.title_Home_1 {
+  color: var(--accent-color2);
+}
+
+.title_Home_2 {
+  color: var(--white);
+  position: relative;
+  z-index: -1;
+}
+
+.body {
+  background-color: #211d21;
+}
+
+.masthead_div {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(0, 0, 0);
+  height: 10vh;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.Flag {
+  width: 100%;
+  height: 100%;
+}
+
+.masthead {
+  margin: clamp(0em, 1.042vw, 1.041em);
+  background-color: #8b8680;
+  border-radius: 10px;
+  padding: 0.521vw;
+  font-family: Pacifico;
+}
+
+.masthead_text {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: clamp(0.625em, 0.833vw, 3.125em);
 }
 
 .masthead-item a:hover {
-    color:#a9a9a9;
-  }
+  color: #a9a9a9;
+  text-decoration: underline;
+}
+
+.table {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  flex-direction: row;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.table_p {
+  text-align: justify;
+  background-color: #a9a9a9;
+  padding: 10px;
+  border-radius: 15px;
+  border: #8b8680 solid 5px;
+  margin-right: 10px;
+}
+
+.image {
+  width: 60%;
+  z-index: 0;
+}
+
+.userform_middle {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  display: flex;
+}
+
+.userform_interior {
+  display: flex;
+  flex-basis: 0;
+  flex-direction: column;
+  height: 0px;
+}
+
+.flex {
+  display: flex;
+  margin: auto;
+}
+
+.header {
+  font-size: 2em;
+  text-align: center;
+}
+
+.am_image {
+  position: relative;
+  background-size: cover;
+  z-index: 0;
+  margin: auto;
+  height: 1080px;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.Home_Page {
+  background-image: url(Amsterdam.jpg);
+  font-size: 16px;
+}
+
+.Famous_People {
+  background-image: url(VanHalenStripes.png);
+}
+
+.am_image::before {
+  content: "";
+  position: absolute;
+  background: #8b8680;
+  /* #003b13 */
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -2;
+}
+
+.circle_L {
+  width: clamp(22em, 28.646vw, 68.75em);
+  height: clamp(22em, 28.646vw, 68.75em);
+  border-radius: 50%;
+  margin-left: clamp(0em, 0.521vw, 1.25em);
+  border: #312f2c solid clamp(0.313em, 1.302vw, 3.313em);
+  z-index: 0;
+}
+
+.circle_R {
+  width: clamp(22em, 28.646vw, 68.75em);
+  height: clamp(22em, 28.646vw, 68.75em);
+  border-radius: 50%;
+  margin-right: clamp(0em, 0.521vw, 1.25em);
+  border: #312f2c solid clamp(0.313em, 1.302vw, 3.313em);
+  z-index: 0;
+}
+
+.bubble {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  padding-bottom: 100px;
+  position: relative;
+  padding: 20px;
+}
+
+.bubbleF {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  position: relative;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.Van_back {
+  position: relative;
+  background-size: cover;
+  z-index: 0;
+  margin: auto;
+  height: 1080px;
+  width: 100%;
+  background-attachment: fixed;
+  background-image: url("Upscaled.png");
+}
+
+.Van_back::before {
+  content: "";
+  position: absolute;
+  width: clamp(20em, 46.875vw, 75em);
+  height: clamp(20em, 46.875vw, 75em);
+  top: clamp(6.25em, 0vw, 18.75em);
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("Van_Halen_T.png");
+
+  animation-name: Van_halen;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.Van_back::after {
+  content: "";
+  position: absolute;
+  background-image: url("TransP_Crowd.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80%;
+  bottom: 0;
+  animation-name: crowd;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  overflow: visible;
+}
+
+.black {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.black::before {
+  content: " ";
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+}
+
+.Anne_back {
+  position: relative;
+  background-size: cover;
+  z-index: 0;
+  margin: auto;
+  width: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-image: url("Anne.jpg");
+  background-repeat: no-repeat;
+}
+
+.text80 {
+  position: relative;
+  width: 80%;
+  font-size: clamp(1.875em, 2.08vw, 4.688em);
+  text-align: justify;
+  color: var(--white);
+  text-shadow: 1px 5px 2px rgb(0, 0, 0);
+  margin: auto;
+  z-index: 1;
+}
+
+.text {
+  font-size: clamp(1.875em, 2.08vw, 4.688em);
+  text-align: justify;
+  color: var(--white);
+  text-shadow: 1px 5px 2px rgb(0, 0, 0);
+  margin: auto;
+  width: 80%;
+}
+
+.Famous_Attractions {
+  background-image: url("https://lp-cms-production.imgix.net/2021-07/500pxRF_91627775.jpg?w=1920&h=640&fit=crop&crop=faces%2Cedges&auto=format&q=75 1x, https://lp-cms-production.imgix.net/2021-07/500pxRF_91627775.jpg?w=1920&h=640&fit=crop&crop=faces%2Cedges&auto=format&q=75 2x");
+  height: 100%;
+}
+
+.Heineken {
+  background-image: url("heineken-experience-hero-01.jpg");
+  position: relative;
+  background-size: cover;
+  z-index: 0;
+  margin: auto;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100%;
+}
+
+.Heineken::before {
+  content: "";
+  position: absolute;
+  background: #003b13;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -2;
+}
+
+.Van_Goh {
+  background-image: url("van_goh.jpg");
+  height: 100%;
+}
+
+.font {
+  font-size: 3.8vh;
+}
+
+.user_form_text {
+  border-radius: clamp(1.875em, 3.125vw, 8em);
+  width: 45%;
+  height: 3em;
+  outline: none;
+  padding: 1px;
+  /* font-size: clamp(0.938em, 2.604vw, 6.25em); */
+  padding-left: 15px;
+  font-family: Pacifico;
+  box-sizing: border-box;
+}
+
+.user_form_text_right {
+  margin-right: auto;
+}
+
+.user_form_text_left {
+  margin-left: auto;
+}
+
+.user_textarea {
+  outline: none;
+  border-radius: clamp(1.875em, 3.125vw, 8em);
+  width: 100%;
+  outline: none;
+  padding: 20px;
+  /* font-size: clamp(0.938em, 2.604vw, 6.25em); */
+  resize: none;
+  font-family: Pacifico;
+  height: 20%;
+  box-sizing: border-box;
+  /* font-size: 500%; */
+}
+
+.user_date {
+  font-family: Pacifico;
+  text-align: center;
+  outline: none;
+  border-radius: clamp(1.875em, 3.125vw, 8em);
+  width: 100%;
+  outline: none;
+  padding: 1px;
+  /* font-size: clamp(1.5rem, 5vw, 3rem); */
+  padding-right: 5px;
+  resize: none;
+  box-sizing: border-box;
+  color: white;
+  text-shadow: 1px 5px 2px black;
+}
+
+.user_input {
+  text-align: center;
+  outline: none;
+  border-radius: clamp(1.875em, 3.125vw, 8em);
+  width: 100%;
+  outline: none;
+  padding: 1px;
+  /* font-size: clamp(1.75em, 5.208vw, 12.5em); */
+  /* font-size: clamp(1.5rem, 5vw, 3rem); */
+  /* font-size: 500%; */
+  padding-right: 5px;
+  resize: none;
+  box-sizing: border-box;
+  font-family: Pacifico;
+  color: white;
+  text-shadow: 1px 5px 2px black;
+}
+
+.form_header {
+  font-size: 6vh;
+  color: white;
+  font-family: "Pacifico";
+}
+
+.user_red {
+  color: var(--accent-color2);
+}
+
+.masthead-phone {
+  background-color: black;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 3;
+}
+
+.text-container {
+  position: absolute;
+  display: grid;
+  z-index: 3;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  background-color: black;
+  transition: height 0.5s ease, opacity 0.8s ease;
+}
+
+input[type="checkbox"]:checked ~ .text-container {
+  display: grid;
+  height: 17vh;
+  opacity: 1;
+}
+
+.drop-phone-text {
+  font-family: Pacifico;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.image-drop-down {
+  width: 5vh;
+  cursor: pointer;
+  padding: 10px;
+  align-items: center;
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+}
+
+input[type="checkbox"]:checked ~ .image img {
+  transform: rotate(90deg);
+}
+
+.drop-down-text {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 23px;
+}
+
+.temps {
+  display: flex;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  border-radius: 300px;
+  font-family: pacifico;
+}
+
+.image_weather {
+  width: 300px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.blurred {
+  margin: auto;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.123);
+  border-radius: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text_weather {
+  font-size: 4vw;
+  display: block;
+  margin: auto;
+  color: white;
+}
+
+.template {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.leaflet-popup-content {
+  font-family: "pacifico" !important;
+  color: #ffffff !important;
+  font-size: 18px;
+  background-color: var(--main-color);
+  text-align: justify;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: var(--main-color) !important;
+}
+
+.leaflet-popup {
+  background-color: var(--accent-color) !important;
+}
+
+.leaflet-popup-tip {
+  background-color: var(--main-color) !important;
+}
