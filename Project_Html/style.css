@@ -574,7 +574,7 @@
 
 input[type="checkbox"]:checked ~ .text-container {
   display: grid;
-  height: 17vh;
+  height: 300%;
   opacity: 1;
 }
 

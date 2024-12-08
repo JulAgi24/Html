@@ -7,7 +7,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 fetch(
-  "http://api.geonames.org/findNearbyWikipediaJSON?lat=52.373&lng=4.893&radius=20&username=julian_agius"
+  "http://api.geonames.org/findNearbyWikipediaJSON?lat=52.373&lng=4.893&maxRows=300&radius=1&username=julian_agius"
 )
   .then((res) => res.json())
   .then((data) => {
@@ -56,21 +56,47 @@ function markers(data) {
       console.log(data);
       let template = "";
       if (data.weather[0].main == "Clouds") {
-        template = `<img src = cloudy.png class = "image_weather"/>`;
+        if (data.weather[0].icon == "02d") {
+          template = `<img src = day_partial_cloud.png  class = "image_weather"/>`;
+        } else if (data.weather[0].icon == ("03d" || "03n")) {
+          template = `<img src = cloudy.png  class = "image_weather"/>`;
+        } else if (data.weather[0].icon == ("04d" || "04n")) {
+          template = `<img src = cloudy.png  class = "image_weather"/>`;
+        } else {
+          template = `<img src = night_full_moon_partial_cloud.png  class = "image_weather"/>`;
+        }
       } else if (data.weather[0].main == "Clear") {
-        template = `<img src = day_clear.png  class = "image_weather"/>`;
+        if (data.weather[0].icon == "01d") {
+          template = `<img src = day_clear.png  class = "image_weather"/>`;
+        } else {
+          template = `<img src = night_half_moon_clear.png  class = "image_weather"/>`;
+        }
       } else if (data.weather[0].main == "Rain") {
-        template = `<img src = rain.png class = "image_weather"/>`;
+        if (data.weather[0].icon == "10d") {
+          template = `<img src = day_rain.png  class = "image_weather"/>`;
+        } else if (data.weather[0].icon == "13d") {
+          template = `<img src = snow.png  class = "image_weather"/>`;
+        } else {
+          template = `<img src = night_half_moon_clear.png  class = "image_weather"/>`;
+        }
       } else if (data.weather[0].main == "Thunderstorm") {
         template = `<img src = thunder.png class = "image_weather"/>`;
       } else if (data.weather[0].main == "Snow") {
         template = `<img src = snow.png class = "image_weather"/>`;
-      } else if (data.weather[0].main == "Mist") {
-        template = `<img src = mist.png class = "image_weather"/>`;
-      } else if (data.weather[0].main == "Fog") {
-        template = `<img src = fog.png class = "image_weather"/>`;
+      } else if (
+        data.weather[0].main ==
+        ("Mist" ||
+          "Smoke" ||
+          "Haze" ||
+          "Dust" ||
+          "Fog" ||
+          "Sand" ||
+          "Ash" ||
+          "Squall")
+      ) {
+        template = `<img src = "https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class = "image_weather"/>`;
       } else if (data.weather[0].main == "Tornado") {
-        template = `<img src = tornado.png class = "image_weather"/>`;
+        template = `<img src = rain.png class = "image_weather"/>`;
       }
       template = `
   <div class = "template">
