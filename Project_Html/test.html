@@ -8,25 +8,13 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <title>Home_Page_Amsterdam</title>
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-
-    <link rel="stylesheet" href="test.css" />
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
   </head>
   <body>
-    <div style="height: 400px" id="map"></div>
-    <script type="text/JavaScript" src="test.js"></script>
+    <script>
+      var request = new XMLHttpRequest();
+      request.open("GET","http://192.168.31.111:2223/request",true)
+      request.send()
+    </script>
 
-    <div id="temp" style="width: 100px; height: 100px"></div>
   </body>
 </html>

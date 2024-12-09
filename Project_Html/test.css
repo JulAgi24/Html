@@ -1,22 +1,29 @@
+@media (max-width: 380px) 
+{
+  .leaflet-popup
+  {
+    max-width: 200px;
+  }
+}
+
+
 /* Style for the popup container */
 .leaflet-popup {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  max-width: 300px;
 }
 
 /* Style for the popup content */
 .leaflet-popup-content {
   font-family: "Arial", sans-serif; /* Font style */
   color: #333; /* Text color */
-  font-size: 18px; /* Font size */
+  border-radius: 15px;
 }
 
 .leaflet-popup-content-header {
   text-align: center;
-  font-size: 30px;
   font-weight: bold;
 }
 

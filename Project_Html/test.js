@@ -55,49 +55,7 @@ function markers(data) {
     function weather(data) {
       console.log(data);
       let template = "";
-      if (data.weather[0].main == "Clouds") {
-        if (data.weather[0].icon == "02d") {
-          template = `<img src = day_partial_cloud.png  class = "image_weather"/>`;
-        } else if (data.weather[0].icon == ("03d" || "03n")) {
-          template = `<img src = cloudy.png  class = "image_weather"/>`;
-        } else if (data.weather[0].icon == ("04d" || "04n")) {
-          template = `<img src = cloudy.png  class = "image_weather"/>`;
-        } else {
-          template = `<img src = night_full_moon_partial_cloud.png  class = "image_weather"/>`;
-        }
-      } else if (data.weather[0].main == "Clear") {
-        if (data.weather[0].icon == "01d") {
-          template = `<img src = day_clear.png  class = "image_weather"/>`;
-        } else {
-          template = `<img src = night_half_moon_clear.png  class = "image_weather"/>`;
-        }
-      } else if (data.weather[0].main == "Rain") {
-        if (data.weather[0].icon == "10d") {
-          template = `<img src = day_rain.png  class = "image_weather"/>`;
-        } else if (data.weather[0].icon == "13d") {
-          template = `<img src = snow.png  class = "image_weather"/>`;
-        } else {
-          template = `<img src = night_half_moon_clear.png  class = "image_weather"/>`;
-        }
-      } else if (data.weather[0].main == "Thunderstorm") {
-        template = `<img src = thunder.png class = "image_weather"/>`;
-      } else if (data.weather[0].main == "Snow") {
-        template = `<img src = snow.png class = "image_weather"/>`;
-      } else if (
-        data.weather[0].main ==
-        ("Mist" ||
-          "Smoke" ||
-          "Haze" ||
-          "Dust" ||
-          "Fog" ||
-          "Sand" ||
-          "Ash" ||
-          "Squall")
-      ) {
-        template = `<img src = "https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class = "image_weather"/>`;
-      } else if (data.weather[0].main == "Tornado") {
-        template = `<img src = rain.png class = "image_weather"/>`;
-      }
+      template = `<img src = "https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class = "image_weather"/>`;
       template = `
   <div class = "template">
     <div class= "image_weather"> ${template} </div>
