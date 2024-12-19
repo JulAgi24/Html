@@ -49,57 +49,51 @@
       </div>
     </div>
 
-    <!-- <div class="userform_middle">
-      <form name="inputform" method="get" class="userform_interior">
-        <p class="title user_title"><b>Contact Us</b></p>
-        <h2 class="form_header">Full Name <span class="user_red"> *</span></h2>
-        <div style="display: flex">
-          <input class="user_form_text user_form_text_right" type="text" />
-          <input class="user_form_text user_form_text_left" type="text" />
-        </div>
-        <br />
-        <br />
-        <h2 class="form_header">Review <span class="user_red"> *</span></h2>
-        <textarea class="user_textarea" name="reviewinput"></textarea>
-        <br />
-        <br />
-        <h2 class="form_header">Date <span class="user_red"> *</span></h2>
-        <input class="user_date" type="date" />
-        <br />
-        <br />
-        <input class="user_input" type="submit" value="submit" />
-      </form>
-    </div> -->
+    <div class="title-user"><p>Contact Us</p></div>
 
-    <div
-      style="
-        margin: auto;
-        width: 50%;
-        height: 10%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      "
-    >
-      <form name="inputform" method="get">
-        <p class="title-user">Contact Us</p>
+    <div class="user_form">
+      <form action="/submit" name="inputform" method="post">
         <h2 class="form_header">Full Name <span class="user_red"> *</span></h2>
         <div style="display: flex">
-          <input class="font user_form_text user_form_text_right" type="text" />
-          <input class="font user_form_text user_form_text_left" type="text" />
+          <input
+            name="name"
+            class="font user_form_text user_form_text_right"
+            type="text"
+          />
+          <input
+            name="surname"
+            class="font user_form_text user_form_text_left"
+            type="text"
+          />
         </div>
         <br />
         <br />
         <h2 class="form_header">Review <span class="user_red"> *</span></h2>
-        <textarea class="font user_textarea" name="reviewinput"></textarea>
+        <textarea
+          id="review_text_area"
+          name="review"
+          class="font user_textarea"
+          name="reviewinput"
+        ></textarea>
         <br />
         <br />
         <h2 class="form_header">Date <span class="user_red"> *</span></h2>
-        <input class="font user_date" type="date" />
+        <input
+          id="dates"
+          name="date"
+          class="font user_date"
+          type="datetime-local"
+          readonly
+        />
         <br />
         <br />
         <input class="font user_input" type="submit" value="submit" />
       </form>
     </div>
+    <script type="text/JavaScript" src="Time.js"></script>
+
+    <div id="review"></div>
+    <div class="page-select page-back" id="pagination"></div>
+    <script type="text/JavaScript" src="review.js"></script>
   </body>
 </html>
