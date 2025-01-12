@@ -29,8 +29,9 @@ function markers(data) {
     };
 
     let template = `
-      <header class = "leaflet-popup-content-header">${data.geonames[x].title}:</header><br>
-      ${data.geonames[x].summary}:<br> <br>
+      <header class = "leaflet-popup-content-header"><a href="https://${data.geonames[x].wikipediaUrl}" target="_blank">${data.geonames[x].title}</a>:
+      </header><br>
+      ${data.geonames[x].summary}<br> <br>
       Rank: ${data.geonames[x].rank}
     `;
 

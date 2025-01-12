@@ -38,30 +38,30 @@ def submit():
     date = request.form.get('date')
     date = date.replace("T"," ")
 
-    if (10 <= len(review.replace(" ", ""))) <= 218 and (len(name.replace(" ", "")) > 2 or len(username.replace(" ", "")) > 2) and (not(len(date) == 0)):
-        user_review = {
-        'Name': name,
-        'Username': username,
-        'Review': review,
-        'Date': date
-        }
+    user_review = {
+    'Name': name,
+    'Username': username,
+    'Review': review,
+    'Date': date
+    }
 
     
-        file_path = os.path.join(os.getcwd(), "output.json")
-        if os.path.exists(file_path) :
-            with open(file_path, 'r') as file:
-                if os.path.getsize(file_path) != 0:
-                    data = json.load(file)
-                else:
-                    data = []
-        else:
-            data = []
-        data.append(user_review)
+    file_path = os.path.join(os.getcwd(), "output.json")
+    if os.path.exists(file_path) :
+        with open(file_path, 'r') as file:
+            if os.path.getsize(file_path) != 0:
+                data = json.load(file)
+            else:
+                data = []
+    else:
+        data = []
+
+    data.append(user_review)
 
     
-        with open(file_path, 'w') as file:
-            json.dump(data,file,indent= 4)
-
+    with open(file_path, 'w') as file:
+        json.dump(data,file,indent= 4)
+        
     return render_template('user_review.html')
 
 if __name__ == '__main__':

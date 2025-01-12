@@ -50,9 +50,14 @@
     </div>
 
     <div class="title-user"><p>Contact Us</p></div>
-
+    <script src="Review_Check.js" defer></script>
     <div class="user_form">
-      <form action="/submit" name="inputform" method="post">
+      <form
+        action="/submit"
+        name="inputform"
+        method="post"
+        onsubmit="return  validateForm()"
+      >
         <h2 class="form_header">Full Name <span class="user_red"> *</span></h2>
         <div style="display: flex">
           <input
